@@ -9,7 +9,12 @@ import LoadingBar from "react-top-loading-bar";
 import authCheck from "../Auth/VerifyRole";
 
 
-await authCheck();
+async function init() {
+  await authCheck();
+  startApp();
+}
+
+init();
 
 const AdminDashboard = () => {
   const [hasStarted, setHasStarted] = useState(false);
