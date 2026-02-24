@@ -26,7 +26,12 @@ import { ToastContainer } from 'react-toastify';
 const queryClient = new QueryClient();
 
 // Remove top-level await
-await authCheck();
+async function init() {
+  await authCheck();
+  startApp();
+}
+
+init();
 
 const router = createBrowserRouter([
   {
