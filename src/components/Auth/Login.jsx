@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from "react"
 import { Eye, EyeOff, Lock, Mail, User, AlertCircle } from "lucide-react"
-import { forgetPassword, login } from "../../service/apiService"
+import { forgetPassword, googleLogin, login } from "../../service/apiService"
 import { useNavigate } from "react-router-dom"
 import LoadingBar from "react-top-loading-bar"
 import Splash from './Splash';
+import { Button } from "antd"
 
 const LoginPage = () => {
   const [showSplash, setShowSplash] = useState(true);
@@ -18,6 +19,7 @@ const LoginPage = () => {
   const [resetSent, setResetSent] = useState(false)
   const navigator = useNavigate();
   const loadingBar = useRef(null);
+  
 
   const startLoading = () => {
     console.log("Loading...");
@@ -36,6 +38,12 @@ const LoginPage = () => {
       }
     }
   }, []);
+   
+  // const handleGoogleLogin=async()=>{
+  //   const res= await googleLogin()
+  //   const url= res.data.url;
+  //   console.log(url);
+  // }
 
   const handleLogin = (e) => {
     e.preventDefault()
@@ -299,7 +307,6 @@ const LoginPage = () => {
                           />
                         </div>
                       </div>
-
                       <div className="flex gap-3">
                         <button
                           type="submit"
@@ -337,6 +344,7 @@ const LoginPage = () => {
                             "Send Reset Link"
                           )}
                         </button>
+                       
                         <button
                           type="button"
                           onClick={() => {
@@ -353,6 +361,8 @@ const LoginPage = () => {
                 </form>
               )}
 
+           <a href="http://localhost:3000/api/v1/user/google" className="rounded-lg border border-gray-300 bg-white px-5 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200">Google Login</a>
+                 
               {/* Footer */}
               <div className="mt-8 text-center">
                 <p className="text-sm text-gray-100">Don't have an account? Contact your administrator</p>

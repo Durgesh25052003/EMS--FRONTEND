@@ -1,13 +1,14 @@
 import axios from 'axios'
 import { FaGoodreadsG } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 const userApi = axios.create({
-  baseURL: 'http://127.0.0.1:3000/api/v1/user',
+  baseURL: 'http://localhost:3000/api/v1/user',
   withCredentials: true,
 });
 
 const leaveApi = axios.create({
-  baseURL: 'http://127.0.0.1:3000/api/v1/leave',
+  baseURL: 'http://localhost:3000/api/v1/leave',
   withCredentials: true,
   headers: {
     'Content-Type': 'application/json',
@@ -16,7 +17,7 @@ const leaveApi = axios.create({
 });
 
 const eventApi = axios.create({
-  baseURL: 'http://127.0.0.1:3000/api/v1/events',
+  baseURL: 'http://localhost:3000/api/v1/events',
   withCredentials: true,
   headers: {
     'Content-Type': 'application/json',
@@ -43,6 +44,17 @@ export const login = async ({ email, password }) => {
     throw error;
   }
 }
+
+// eslint-disable-next-line react-refresh/only-export-components
+export const googleLogin=async()=>{
+  try {
+    const res=await userApi.post('/google');
+    console.log("Redirect Successul...")
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 
 export const verifyToken = async (token) => {
   try {
