@@ -3,12 +3,12 @@ import { FaGoodreadsG } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 
 const userApi = axios.create({
-  baseURL: 'http://localhost:3000/api/v1/user',
+  baseURL: 'https://ems-backend-5-1c90.onrender.com/api/v1/user',
   withCredentials: true,
 });
 
 const leaveApi = axios.create({
-  baseURL: 'http://localhost:3000/api/v1/leave',
+  baseURL: 'https://ems-backend-5-1c90.onrender.com/api/v1/leave',
   withCredentials: true,
   headers: {
     'Content-Type': 'application/json',
@@ -17,7 +17,7 @@ const leaveApi = axios.create({
 });
 
 const eventApi = axios.create({
-  baseURL: 'http://localhost:3000/api/v1/events',
+  baseURL: 'https://ems-backend-5-1c90.onrender.com/api/v1/events',
   withCredentials: true,
   headers: {
     'Content-Type': 'application/json',
