@@ -26,7 +26,12 @@ import {
 } from "@material-tailwind/react";
 import { FaUser, FaCog, FaSignOutAlt } from 'react-icons/fa';
 
-await authCheck();
+async function init() {
+  await authCheck();
+  startApp();
+}
+
+init();
 
 
 const EmployeeDashBoard = () => {
