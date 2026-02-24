@@ -1,7 +1,7 @@
 import './App.css';
 import Login from "./components/Auth/Login"
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import EmployeeDashBoard from './components/Dashboard/EmployeeDashboard';
+import EmployeeDashBoard from './components/Dashboard/EmployeeDashBoard';
 import authCheck from './components/Auth/VerifyRole';
 import AdminDashboard from './components/Dashboard/AdminDashboard';
 import { DrawerWithNavigation } from './components/others/Admin-Others/AdminDrawer';
