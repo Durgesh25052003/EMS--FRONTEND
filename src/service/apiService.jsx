@@ -178,7 +178,11 @@ export const resetPassword = async (token, newPassword) => {
 export const addTask = async (id, task) => {
   try {
     console.log(id, task)
-    const res = await userApi.patch(`/addTask/${id}`, task)
+    const res = await userApi.patch(`/addTask/${id}`, task,
+       {
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      })
     console.log(res)
   } catch (error) {
     console.log(error)
