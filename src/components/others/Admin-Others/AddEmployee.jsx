@@ -82,6 +82,7 @@ const CreateEmployee = () => {
     formData.append('profileImage', formDataRaw.profileImage);
 
     console.log('Form submitted:', formData);
+    console.log("🙌🙌🙌✅")
     const res=await AddEmployee(formData)
     console.log(res)
     if(res.status===200){
