@@ -46,7 +46,7 @@ const EmployeeCard = () => {
                     background: "rgba(37, 99, 235, 0.3)"
                   }}>
                     <img
-                      src={`${import.meta.env.VITE_API_URL}${employee.profileImage}`}
+                      src={`${employee.profileImage}`}
                       alt={`${employee.name}'s profile`}
                       className="w-32 h-32 rounded-full border-4 border-white object-cover shadow-md"
                       crossOrigin="anonymous"
